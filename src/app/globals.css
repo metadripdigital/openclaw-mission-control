@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root { --font-mono: 'Share Tech Mono', monospace; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; background: #04060f; font-family: var(--font-mono); color: #ccd; font-size: 18px; }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #040810; }
+::-webkit-scrollbar-thumb { background: #0d1f2d; border-radius: 2px; }
+
+@keyframes glow-pulse { 0%,100%{opacity:1}50%{opacity:0.25} }
+@keyframes blink { 0%,44%,56%,100%{transform:scaleY(1)}50%{transform:scaleY(0.07)} }
+@keyframes leg-l { 0%,100%{transform:rotate(-22deg)}50%{transform:rotate(22deg)} }
+@keyframes leg-r { 0%,100%{transform:rotate(22deg)}50%{transform:rotate(-22deg)} }
+@keyframes arm-l { 0%,100%{transform:rotate(18deg)}50%{transform:rotate(-18deg)} }
+@keyframes arm-r { 0%,100%{transform:rotate(-18deg)}50%{transform:rotate(18deg)} }
+@keyframes walk-lr { 0%{transform:translateX(0px) scaleX(1)}42%{transform:translateX(60px) scaleX(1)}50%{transform:translateX(60px) scaleX(-1)}92%{transform:translateX(0px) scaleX(-1)}100%{transform:translateX(0px) scaleX(1)} }
+@keyframes walk-lr2 { 0%{transform:translateX(0px) scaleX(-1)}42%{transform:translateX(-50px) scaleX(-1)}50%{transform:translateX(-50px) scaleX(1)}92%{transform:translateX(0px) scaleX(1)}100%{transform:translateX(0px) scaleX(-1)} }
+@keyframes float-bob { 0%,100%{transform:translateY(0px)}50%{transform:translateY(-5px)} }
+@keyframes scan-line { 0%{top:0%;opacity:0.5}100%{top:100%;opacity:0} }
+@keyframes screen-flicker { 0%,88%,92%,100%{opacity:1}90%{opacity:0.75} }
+@keyframes ticker-scroll { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
+@keyframes standby-pulse { 0%,100%{opacity:1}50%{opacity:0.35} }
+@keyframes fadeSlideIn { from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)} }
+@keyframes spin-slow { from{transform:rotate(0deg)}to{transform:rotate(360deg)} }
+
+.font-mono { font-family: var(--font-mono); }
+.anim-glow-pulse { animation: glow-pulse 2s infinite; }
+.anim-walk-lr { animation: walk-lr 7s ease-in-out infinite; }
+.anim-walk-lr2 { animation: walk-lr2 10s ease-in-out 1s infinite; }
+.anim-float { animation: float-bob 2.5s ease-in-out infinite; }
+.anim-scan { animation: scan-line 4s linear infinite; }
+.anim-flicker { animation: screen-flicker 9s infinite; }
+.anim-ticker { animation: ticker-scroll 32s linear infinite; }
+.anim-spin { animation: spin-slow 8s linear infinite; }
+.anim-standby { animation: standby-pulse 2.5s ease-in-out infinite; }
+.anim-fadein { animation: fadeSlideIn 0.3s ease-out forwards; }
+.anim-leg-l { animation: leg-l 0.55s ease-in-out infinite; }
+.anim-leg-r { animation: leg-r 0.55s ease-in-out infinite; }
+.anim-arm-l { animation: arm-l 0.55s ease-in-out infinite; }
+.anim-arm-r { animation: arm-r 0.55s ease-in-out infinite; }
+.anim-blink { animation: blink 3.5s infinite; }
+.anim-blink2 { animation: blink 3.5s 0.4s infinite; }
+.scanlines { background: repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.12) 3px,rgba(0,0,0,0.12) 4px); }
